@@ -26,11 +26,28 @@ public class EmployeeDao {
 	public Employee addEmployee(Employee employee) {
 		employees.getEmployeeList().add(employee);
 
-		Employee employeeAdded = employees.getEmployeeList().stream()
-				.filter(employeeSearched -> employee.getId()
-						.equals(employeeSearched.getId()))
-				.findAny().orElse(null);
+		Employee employeeAdded = getEmployeeById(employee.getId());
 
 		return employeeAdded;
+	}
+
+	public Employee getEmployeeById(Integer id) {
+		Employee employeeFound = employees.getEmployeeList().stream()
+				.filter(employeeSearched -> id.equals(employeeSearched.getId()))
+				.findAny().orElse(null);
+
+		return employeeFound;
+	}
+
+	public void updateEmployee(Integer id, Employee employee) {
+		Employee employeeToUpdate = getEmployeeById(id);
+
+		employeeToUpdate.setId(employee.getId());
+		employeeToUpdate.setFirstName(employee.getFirstName());
+		employeeToUpdate.setLastName(employee.getLastName());
+	}
+
+	public void deleteEmployee(Integer id) {
+		employees.getEmployeeList().removeIf(emp -> emp.getId().equals(id));
 	}
 }
