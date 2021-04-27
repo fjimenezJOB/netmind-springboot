@@ -7,7 +7,7 @@ Un proyecto basico de SpringBoot creando una web Api que devuelve datos de los e
 https://springboot-netmind-api.herokuapp.com/
 
 ## DockerHub image:
-https://hub.docker.com/repository/docker/fjimenezjob/netmind-springboot
+https://hub.docker.com/repository/docker/fjimenezjob/netmind-springboot-api
 
 ## URL Swagger:
 http://localhost:8080/swagger-ui.html#/
