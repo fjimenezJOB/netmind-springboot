@@ -16,6 +16,13 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<distributionManagement>
+        <repository>
+          <id>github</id>
+          <name>GitHub fjimenezJOB Apache Maven Packages</name>
+          <url>https://maven.pkg.github.com/fjimenezJOB/netmind-springboot</url>
+        </repository>
+     </distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -1,11 +1,19 @@
--Se debe de crear la variabla de entorno: Entorno
+# netmind-springboot API
+Un proyecto basico de SpringBoot creando una web Api que devuelve datos de los empleados
+## EndPoints:
+- /employees: Devuelve un json con los empleados.
 
--url de swagger: http://localhost:8080/swagger-ui.html#
+## Deploy on Heroku:
+https://springboot-netmind-api.herokuapp.com/
 
--url de h2: http://localhost:8080/h2-ui/login.jsp
+## DockerHub image:
+https://hub.docker.com/repository/docker/fjimenezjob/netmind-springboot
 
--jdbc url: jdbc:h2:mem:testdb
+## URL Swagger:
+http://localhost:8080/swagger-ui.html#/
 
-INSERT INTO EMPLOYEE VALUES (1,'pepe@gmail.com','Pepe','Soto');
+## URL H2:
+http://localhost:8080/h2-ui/login.jsp
 
-SELECT * FROM EMPLOYEE;
+## JDBC URL:
+jdbc url: jdbc:h2:mem:testdb

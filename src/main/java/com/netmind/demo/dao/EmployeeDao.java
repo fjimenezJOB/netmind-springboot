@@ -45,6 +45,7 @@ public class EmployeeDao {
 		employeeToUpdate.setId(employee.getId());
 		employeeToUpdate.setFirstName(employee.getFirstName());
 		employeeToUpdate.setLastName(employee.getLastName());
+		employeeToUpdate.setEmail(employee.getEmail());
 	}
 
 	public void deleteEmployee(Integer id) {
