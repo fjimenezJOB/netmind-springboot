@@ -34,14 +34,14 @@ public class EmployeeController {
 	}
 
 	@PutMapping("/employees/{id}")
-	public ResponseEntity<Employee> updateStudent(@PathVariable Integer id,
+	public ResponseEntity<Employee> updateEmployee(@PathVariable Integer id,
 			@RequestBody Employee employee) {
 		employeeDao.updateEmployee(id, employee);
 		return ResponseEntity.ok(employeeDao.getEmployeeById(id));
 	}
 
-	@DeleteMapping("/students/{id}")
-	public ResponseEntity<Void> deleteStudent(@PathVariable Integer id) {
+	@DeleteMapping("/employees/{id}")
+	public ResponseEntity<Void> deleteEmployee(@PathVariable Integer id) {
 		employeeDao.deleteEmployee(id);
 		return ResponseEntity.ok().build();
 	}
