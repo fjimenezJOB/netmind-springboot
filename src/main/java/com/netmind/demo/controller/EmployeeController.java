@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 import com.netmind.demo.dao.EmployeeDao;
 import com.netmind.demo.model.Employee;
 import com.netmind.demo.model.Employees;
@@ -29,13 +31,13 @@ public class EmployeeController {
 
 	@PostMapping("/employees")
 	public ResponseEntity<Employee> createEmployee(
-			@RequestBody Employee employee) {
+			@Valid @RequestBody Employee employee) {
 		return ResponseEntity.ok(employeeDao.addEmployee(employee));
 	}
 
 	@PutMapping("/employees/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable Integer id,
-			@RequestBody Employee employee) {
+			@Valid @RequestBody Employee employee) {
 		employeeDao.updateEmployee(id, employee);
 		return ResponseEntity.ok(employeeDao.getEmployeeById(id));
 	}
