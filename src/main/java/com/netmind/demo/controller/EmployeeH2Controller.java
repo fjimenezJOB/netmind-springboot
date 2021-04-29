@@ -34,7 +34,7 @@ public class EmployeeH2Controller {
 
 	@PostMapping("/employees")
 	public ResponseEntity<Employee> createH2Employee(
-		@Valid 
+		@Valid
 		@RequestBody Employee employee) {
 			return ResponseEntity.ok(employeeRepository.save(employee));
 	}
