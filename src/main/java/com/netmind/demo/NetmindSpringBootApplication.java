@@ -13,9 +13,8 @@ public class NetmindSpringBootApplication {
 
 	public static void main(String[] args) {
 
-		logger.info("My message before start application");
 		SpringApplication.run(NetmindSpringBootApplication.class, args);
-		logger.info("My message after start application");
+		logger.info("Netmind SpringBoot Api REDY");
 	}
 
 }

@@ -29,6 +29,11 @@ public class EmployeeController {
 		return ResponseEntity.ok(employeeDao.getAllEmployees());
 	}
 
+	@GetMapping(path = "/employees/{id}", produces = "application/json")
+	public ResponseEntity<Employee> getEmployeeById(@PathVariable Integer id){
+		return ResponseEntity.ok(employeeDao.getEmployeeById(id));
+	}
+
 	@PostMapping("/employees")
 	public ResponseEntity<Employee> createEmployee(
 			@Valid @RequestBody Employee employee) {
