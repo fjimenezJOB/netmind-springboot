@@ -11,8 +11,8 @@ public class EmployeeDao {
 	private static Employees employees = new Employees();
 
 	static {
-		employees.getEmployeeList().add(new Employee(1, "Lokesh", "Gupta",
-				"howtodoinjava@netmind.com"));
+		employees.getEmployeeList()
+				.add(new Employee(1, "Lokesh", "Gupta","howtodoinjava@netmind.com"));
 		employees.getEmployeeList()
 				.add(new Employee(2, "Alex", "Kolenchiskey", "abc@gmail.com"));
 		employees.getEmployeeList()

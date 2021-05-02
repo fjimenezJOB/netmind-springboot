@@ -1,6 +1,7 @@
 package com.netmind.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -32,6 +33,11 @@ public class EmployeeH2Controller {
 		return ResponseEntity.ok(employeeRepository.findAll());
 	}
 
+	@GetMapping(path = "/employees/{id}", produces = "application/json")
+	public  ResponseEntity<Optional<Employee>> getH2EmployeeById(@PathVariable Integer id) {
+			return ResponseEntity.ok(employeeRepository.findById(id));
+	}
+
 	@PostMapping("/employees")
 	public ResponseEntity<Employee> createH2Employee(
 		@Valid
@@ -49,7 +55,7 @@ public class EmployeeH2Controller {
 	@DeleteMapping("/employees/{id}")
 	public ResponseEntity<Void> deleteH2Employee(
 		@PathVariable Integer id){
-			employeeRepository.deleteById(id);;
+			employeeRepository.deleteById(id);
 			return ResponseEntity.ok().build();
 	}
 }
