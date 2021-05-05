@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import lombok.Data;
+
+@Data
 @Configuration
 @ConfigurationProperties("spring.datasource")
 public class DatabaseConfig {
@@ -18,55 +21,23 @@ public class DatabaseConfig {
 	private String password;
 	private String driverClassName;
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getDriverClassName() {
-		return driverClassName;
-	}
-
-	public void setDriverClassName(String driverClassName) {
-		this.driverClassName = driverClassName;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	@Profile("dev")
 	@Bean
 	public String devDatabaseConnection() {
-		logger.info(url);
-		logger.info(username);
+		logger.info("Database URL: " + url);
+		logger.info("Database Username: "+ username);
 		logger.info(password);
-		logger.info(driverClassName);
+		logger.info("Database Driver: "+driverClassName);
 		return url;
 	}
 
 	@Profile("pro")
 	@Bean
-	public String prodDatabaseConnection() {
-		logger.info(url);
-		logger.info(username);
+	public String proDatabaseConnection() {
+		logger.info("Database URL: " + url);
+		logger.info("Database Username: "+ username);
 		logger.info(password);
-		logger.info(driverClassName);
+		logger.info("Database Driver: "+driverClassName);
 		return url;
 	}
 }
